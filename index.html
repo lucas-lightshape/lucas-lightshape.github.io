@@ -67,6 +67,7 @@
 
   .buttons {
     text-align: right;
+    z-index: 9998;
   }
 
   .button {
@@ -79,6 +80,10 @@
     display: inline-block;
     font-size: 16px;
   }
+
+  .scene {
+    z-index: 9997;
+  }
 </style>
 
 <body style="margin: 0px; overflow: hidden">
@@ -88,46 +93,48 @@
   <div class="arjs-loader">
     <div>AR Erlebnis wird geladen</div>
   </div>
-  <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="antialias: true; alpha: true; precision: medium;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-  >
-    <a-assets>
-      <video
-        src="30Sec Donpasquale.m4v"
-        preload="auto"
-        id="vid"
-        response-type="arraybuffer"
-        loop
-        crossorigin
-        webkit-playsinline
-        autoplay
-        muted
-        playsinline
-      ></video>
-    </a-assets>
-
-    <a-nft
-      videohandler
-      type="nft"
-      url="./nft/DonPasquale"
-      smooth="true"
-      smoothCount="10"
-      smoothTolerance="0.01"
-      smoothThreshold="5"
+  <div class="scene">
+    <a-scene
+      vr-mode-ui="enabled: false;"
+      renderer="antialias: true; alpha: true; precision: medium;"
+      embedded
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
     >
-      <a-video
-        src="#vid"
-        position="75 0 -100"
-        rotation="90 0 180"
-        width="1280"
-        height="720"
-        scale="-0.125 0.125 0.125"
+      <a-assets>
+        <video
+          src="30Sec Donpasquale.m4v"
+          preload="auto"
+          id="vid"
+          response-type="arraybuffer"
+          loop
+          crossorigin
+          webkit-playsinline
+          autoplay
+          muted
+          playsinline
+        ></video>
+      </a-assets>
+
+      <a-nft
+        videohandler
+        type="nft"
+        url="./nft/DonPasquale"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance="0.01"
+        smoothThreshold="5"
       >
-      </a-video>
-    </a-nft>
-    <a-entity camera></a-entity>
-  </a-scene>
+        <a-video
+          src="#vid"
+          position="75 0 -100"
+          rotation="90 0 180"
+          width="1280"
+          height="720"
+          scale="-0.125 0.125 0.125"
+        >
+        </a-video>
+      </a-nft>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </div>
 </body>
