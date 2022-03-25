@@ -34,6 +34,11 @@
     });
   };
 </script>
+<script>
+  function clickHandler() {
+    alert("something");
+  }
+</script>
 
 <style>
   .arjs-loader {
@@ -66,7 +71,7 @@
 
 <body style="margin: 0px; overflow: hidden">
   <div class="buttons">
-    <button class="muteButton">Ton an</button>
+    <button class="muteButton" onclick="clickHandler()">Ton an</button>
   </div>
   <div class="arjs-loader">
     <div>AR Erlebnis wird geladen</div>
