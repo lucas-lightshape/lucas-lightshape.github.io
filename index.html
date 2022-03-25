@@ -36,7 +36,11 @@
 </script>
 <script>
   function clickHandler() {
-    alert("something");
+    if (this.value == "Ton An") this.value = "Ton Aus";
+    else this.value = "Ton An";
+
+    var video = document.getElementById("vid");
+    video.muted = !video.muted;
   }
 </script>
 
@@ -71,7 +75,7 @@
 
 <body style="margin: 0px; overflow: hidden">
   <div class="buttons">
-    <button class="muteButton" onclick="clickHandler()">Ton an</button>
+    <button class="muteButton" onclick="clickHandler()">Ton An</button>
   </div>
   <div class="arjs-loader">
     <div>AR Erlebnis wird geladen</div>
