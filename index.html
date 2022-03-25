@@ -60,18 +60,22 @@
     height: 100%;
     width: 100%;
     z-index: 9999;
+    text-align: center;
   }
 </style>
 
 <body style="margin: 0px; overflow: hidden">
+  <div class="buttons">
+    <button class="muteButton">Ton an</button>
+  </div>
   <div class="arjs-loader">
     <div>AR Erlebnis wird geladen</div>
   </div>
   <a-scene
-    vr-mode-ui="enabled: true;"
+    vr-mode-ui="enabled: false;"
     renderer="antialias: true; alpha: true; precision: high;"
     embedded
-    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: true;"
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
   >
     <a-assets>
       <video
