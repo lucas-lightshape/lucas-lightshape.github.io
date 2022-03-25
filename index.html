@@ -42,8 +42,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9998;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,26 +53,13 @@
     text-align: center;
     font-size: 1.25em;
     color: white;
-  }
-
-  .container {
-    height: relative;
-    position: relative;
-    z-index: 9999;
-  }
-
-  .vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    font-family: "Segoe UI";
   }
 </style>
 
 <body style="margin: 0px; overflow: hidden">
   <div class="arjs-loader">
-    <div>Loading, please wait...</div>
+    <div>AR Erlebnis wird geladen</div>
   </div>
 
   <a-scene
