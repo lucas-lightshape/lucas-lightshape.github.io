@@ -35,6 +35,19 @@
   };
 </script>
 
+<script>
+  document.getElementById("startAR").onclick = function () {
+    myFunction();
+  };
+
+  function myFunction() {
+    document.getElementById("startARDiv").style = "display:none";
+    var video;
+    video = document.querySelector("#vid");
+    video.play();
+  }
+</script>
+
 <style>
   .arjs-loader {
     height: 100%;
@@ -43,7 +56,7 @@
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
+    z-index: 9998;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,9 +69,9 @@
   }
 
   .container {
-    height: 200px;
+    height: relative;
     position: relative;
-    border: 3px solid green;
+    z-index: 9999;
   }
 
   .vertical-center {
@@ -75,9 +88,9 @@
     <div>Loading, please wait...</div>
   </div>
 
-  <div class="container">
+  <div class="container" id="startARDiv">
     <div class="vertical-center">
-      <button>Starte AR Erlebnis</button>
+      <button id="startAR">Starte AR Erlebnis</button>
     </div>
   </div>
 
@@ -96,7 +109,6 @@
         loop
         crossorigin
         webkit-playsinline
-        autoplay
         playsinline
       ></video>
     </a-assets>
