@@ -4,11 +4,8 @@
     content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
   />
 </head>
-
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-
 <script src="https://raw.githack.com/AR-js-org/AR.js/ES6/aframe/build/aframe-ar-nft.js"></script>
-
 <script>
   window.onload = function () {
     document
@@ -20,16 +17,13 @@
     AFRAME.registerComponent("videohandler", {
       init: function () {
         var marker = this.el;
-
         this.vid = document.querySelector("#vid");
-
         marker.addEventListener(
           "markerFound",
           function () {
             this.vid.play();
           }.bind(this)
         );
-
         marker.addEventListener(
           "markerLost",
           function () {
@@ -40,7 +34,6 @@
     });
   };
 </script>
-
 <style>
   .arjs-loader {
     height: 100%;
@@ -54,14 +47,12 @@
     justify-content: center;
     align-items: center;
   }
-
   .arjs-loader div {
     text-align: center;
     font-size: 1.25em;
     color: black;
     font-family: "Segoe UI";
   }
-
   .buttons {
     position: absolute;
     bottom: 0;
@@ -73,30 +64,22 @@
     align-items: center;
     z-index: 10;
   }
-
   .say-hi-button {
     padding: 0.25em;
+    border-radius: 4px;
     border: none;
-    background: rgba(0, 0, 0, 0);
+    background: white;
     color: black;
     width: 4em;
-    height: 4em;
-  }
-
-  .h2 {
-    font-size: 0.75em;
-    margin: 3em;
+    height: 2em;
   }
 </style>
-
 <body style="margin: 0px; overflow: hidden">
   <div class="buttons">
-    <img src="speakerIcon.png" class="say-hi-button" />
+    <button class="say-hi-button">SAY HI!</button>
   </div>
   <div class="arjs-loader">
-    <div>
-      <h1>AR Erlebnis wird geladen</h1>
-    </div>
+    <div>AR Erlebnis wird geladen</div>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
@@ -118,7 +101,6 @@
         playsinline
       ></video>
     </a-assets>
-
     <a-nft
       videohandler
       type="nft"
