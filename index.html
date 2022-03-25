@@ -4,8 +4,11 @@
     content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
   />
 </head>
+
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+
 <script src="https://raw.githack.com/AR-js-org/AR.js/ES6/aframe/build/aframe-ar-nft.js"></script>
+
 <script>
   window.onload = function () {
     document
@@ -17,13 +20,16 @@
     AFRAME.registerComponent("videohandler", {
       init: function () {
         var marker = this.el;
+
         this.vid = document.querySelector("#vid");
+
         marker.addEventListener(
           "markerFound",
           function () {
             this.vid.play();
           }.bind(this)
         );
+
         marker.addEventListener(
           "markerLost",
           function () {
@@ -34,6 +40,7 @@
     });
   };
 </script>
+
 <style>
   .arjs-loader {
     height: 100%;
@@ -47,12 +54,14 @@
     justify-content: center;
     align-items: center;
   }
+
   .arjs-loader div {
     text-align: center;
     font-size: 1.25em;
     color: black;
     font-family: "Segoe UI";
   }
+
   .buttons {
     position: absolute;
     bottom: 0;
@@ -64,19 +73,20 @@
     align-items: center;
     z-index: 10;
   }
+
   .say-hi-button {
     padding: 0.25em;
-    border-radius: 4px;
     border: none;
-    background: white;
+    background: rgba(0, 0, 0, 0);
     color: black;
     width: 4em;
-    height: 2em;
+    height: 4em;
   }
 </style>
+
 <body style="margin: 0px; overflow: hidden">
   <div class="buttons">
-    <button class="say-hi-button">SAY HI!</button>
+    <img src="speakerIcon.png" class="say-hi-button" />
   </div>
   <div class="arjs-loader">
     <div>AR Erlebnis wird geladen</div>
@@ -101,6 +111,7 @@
         playsinline
       ></video>
     </a-assets>
+
     <a-nft
       videohandler
       type="nft"
