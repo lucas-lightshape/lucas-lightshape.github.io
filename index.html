@@ -52,7 +52,7 @@
   .arjs-loader div {
     text-align: center;
     font-size: 1.25em;
-    color: white;
+    color: black;
     font-family: "Segoe UI";
   }
 </style>
@@ -62,13 +62,16 @@
     <div>AR Erlebnis wird geladen</div>
   </div>
 
+  <div>
+    <button>Unmute</button>
+  </div>
+
   <a-scene
     vr-mode-ui="enabled: false;"
     renderer="antialias: true; alpha: true; precision: high;"
     embedded
     arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
   >
-    <button>Unmute</button>
     <a-assets>
       <video
         src="30Sec Donpasquale.m4v"
