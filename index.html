@@ -35,10 +35,7 @@
   };
 </script>
 <script>
-  function clickHandler() {
-    if (this.value == "Ton An") this.value = "Ton Aus";
-    else this.value = "Ton An";
-
+  function mute() {
     var video = document.getElementById("vid");
     video.muted = !video.muted;
   }
@@ -108,6 +105,7 @@
           width="1280"
           height="720"
           scale="-0.125 0.125 0.125"
+          onclick="mute()"
         >
         </a-video>
       </a-nft>
