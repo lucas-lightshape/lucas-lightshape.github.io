@@ -67,49 +67,47 @@
   <div class="arjs-loader">
     <div>AR Erlebnis wird geladen</div>
   </div>
-  <div class="scene">
-    <a-scene
-      vr-mode-ui="enabled: false;"
-      renderer="antialias: true; alpha: true; precision: medium;"
-      embedded
-      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-    >
-      <a-assets>
-        <video
-          src="30Sec Donpasquale.m4v"
-          preload="auto"
-          id="vid"
-          response-type="arraybuffer"
-          loop
-          crossorigin
-          webkit-playsinline
-          autoplay
-          muted
-          playsinline
-        ></video>
-      </a-assets>
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="antialias: true; alpha: true; precision: medium;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+  >
+    <a-assets>
+      <video
+        src="30Sec Donpasquale.m4v"
+        preload="auto"
+        id="vid"
+        response-type="arraybuffer"
+        loop
+        crossorigin
+        webkit-playsinline
+        autoplay
+        muted
+        playsinline
+        onclick="mute()"
+      ></video>
+    </a-assets>
 
-      <a-nft
-        videohandler
-        type="nft"
-        url="./nft/DonPasquale"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
+    <a-nft
+      videohandler
+      type="nft"
+      url="./nft/DonPasquale"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance="0.01"
+      smoothThreshold="5"
+    >
+      <a-video
+        src="#vid"
+        position="75 0 -100"
+        rotation="90 0 180"
+        width="1280"
+        height="720"
+        scale="-0.125 0.125 0.125"
       >
-        <a-video
-          src="#vid"
-          position="75 0 -100"
-          rotation="90 0 180"
-          width="1280"
-          height="720"
-          scale="-0.125 0.125 0.125"
-          onclick="mute()"
-        >
-        </a-video>
-      </a-nft>
-      <a-entity camera></a-entity>
-    </a-scene>
-  </div>
+      </a-video>
+    </a-nft>
+    <a-entity camera></a-entity>
+  </a-scene>
 </body>
