@@ -1,7 +1,7 @@
 <head>
   <meta
     name="viewport"
-    content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    content="autoRotate:disabled width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
   />
 </head>
 
@@ -10,19 +10,6 @@
 <script src="https://raw.githack.com/AR-js-org/AR.js/ES6/aframe/build/aframe-ar-nft.js"></script>
 
 <script>
-  $(document).ready(function () {
-        yourFunction();
-  });
-  function yourFunction(){
-    // (A1) GO INTO FULL SCREEN FIRST
-    let de = document.documentElement;
-    if (de.requestFullscreen) { de.requestFullscreen(); }
-    else if (de.mozRequestFullScreen) { de.mozRequestFullScreen(); }
-    else if (de.webkitRequestFullscreen) { de.webkitRequestFullscreen(); }
-    else if (de.msRequestFullscreen) { de.msRequestFullscreen(); }
-    // (A2) THEN LOCK ORIENTATION
-    screen.orientation.lock(orientation);
-  }
   window.onload = function () {
     document
       .querySelector(".say-hi-button")
