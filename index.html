@@ -42,14 +42,6 @@
 </script>
 
 <style>
-  @media only screen and (orientation:portrait){
-    #content{display:block}
-    #turn{display:none}
-  }
-  @media only screen and (orientation:landscape){
-    #content{display:none}
-    #turn{display:block}
-  }
   .arjs-loader {
     height: 100%;
     width: 100%;
@@ -93,8 +85,6 @@
 </style>
 
 <body style="margin: 0px; overflow: hidden">
-  <div id= "turn"><h1>Bitte drehen sie das Gerät!</h1></div>
-  <div id="content">
     <div class="buttons">
       <img src="speakerIcon.png" class="say-hi-button" />
     </div>
@@ -142,5 +132,4 @@
       </a-nft>
       <a-entity camera></a-entity>
     </a-scene>
-  </div>
 </body>
