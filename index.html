@@ -42,13 +42,14 @@
 </script>
 
 <style>
-  @media only screen and (orientation:landscape){
-    body{
-      heigt: 100vh;
-      transform: rotate(270deg)
-    }
+  @media only screen and (orientation:portrait){
+    #content{display:block}
+    #turn{display:none}
   }
-  
+  @media only screen and (orientation:landscape){
+    #content{display:none}
+    #turn{display:block}
+  }
   .arjs-loader {
     height: 100%;
     width: 100%;
@@ -92,51 +93,54 @@
 </style>
 
 <body style="margin: 0px; overflow: hidden">
-  <div class="buttons">
-    <img src="speakerIcon.png" class="say-hi-button" />
-  </div>
-  <div class="arjs-loader">
-    <div>AR Erlebnis wird geladen</div>
-  </div>
-  <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="antialias: true; alpha: true; precision: medium;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-  >
-    <a-assets>
-      <video
-        src="30Sec Donpasquale.m4v"
-        preload="auto"
-        id="vid"
-        response-type="arraybuffer"
-        loop
-        crossorigin
-        webkit-playsinline
-        muted
-        playsinline
-      ></video>
-    </a-assets>
-
-    <a-nft
-      videohandler
-      type="nft"
-      url="./nft/DonPasquale"
-      smooth="true"
-      smoothCount="10"
-      smoothTolerance="0.01"
-      smoothThreshold="5"
+  <div id= "turn"><h1>Bitte drehen sie das Gerät!</h1></div>
+  <div id="content">
+    <div class="buttons">
+      <img src="speakerIcon.png" class="say-hi-button" />
+    </div>
+    <div class="arjs-loader">
+      <div>AR Erlebnis wird geladen</div>
+    </div>
+    <a-scene
+      vr-mode-ui="enabled: false;"
+      renderer="antialias: true; alpha: true; precision: medium;"
+      embedded
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
     >
-      <a-video
-        src="#vid"
-        position="75 0 -120"
-        rotation="90 0 180"
-        width="1280"
-        height="720"
-        scale="-0.15 0.15 0.15"
+      <a-assets>
+        <video
+          src="30Sec Donpasquale.m4v"
+          preload="auto"
+          id="vid"
+          response-type="arraybuffer"
+          loop
+          crossorigin
+          webkit-playsinline
+          muted
+          playsinline
+        ></video>
+      </a-assets>
+
+      <a-nft
+        videohandler
+        type="nft"
+        url="./nft/DonPasquale"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance="0.01"
+        smoothThreshold="5"
       >
-      </a-video>
-    </a-nft>
-    <a-entity camera></a-entity>
-  </a-scene>
+        <a-video
+          src="#vid"
+          position="75 0 -120"
+          rotation="90 0 180"
+          width="1280"
+          height="720"
+          scale="-0.15 0.15 0.15"
+        >
+        </a-video>
+      </a-nft>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </div>
 </body>
