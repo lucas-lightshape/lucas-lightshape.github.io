@@ -10,6 +10,7 @@
 <script src="https://raw.githack.com/AR-js-org/AR.js/ES6/aframe/build/aframe-ar-nft.js"></script>
 
 <script>
+  onorientationchange = event => {alert("Bitte verwenden sie das Gerät im Hochkantmodus")};
   window.onload = function () {
     document
       .querySelector(".say-hi-button")
