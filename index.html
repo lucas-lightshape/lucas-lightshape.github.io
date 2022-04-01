@@ -11,7 +11,7 @@
 
 <script>
   onorientationchange = event => {
-    if(screen.availHeight > screen.availWidth)
+    if(screen.availHeight < screen.availWidth)
     alert("Bitte verwenden sie das Gerät im Hochkantmodus")
   };
   window.onload = function () {
