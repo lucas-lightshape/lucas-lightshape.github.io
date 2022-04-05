@@ -22,7 +22,8 @@
       document.getElementById('augmentedVideo').setAttribute('scale','-0.15 0.15 0.15')
       document.getElementById('augmentedVideo').setAttribute('position','75 0 -125')
     }
-    document.getElementById('vid').load();
+    document.getElementById('vid').pause();
+    document.getElementById('vid').play();
   };
   window.onload = function () {
     document
