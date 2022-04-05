@@ -16,15 +16,16 @@
     if (screen.availHeight < screen.availWidth) {
       document.getElementById('augmentedVideo').setAttribute('scale','-0.2 0.2 0.2')
       document.getElementById('augmentedVideo').setAttribute('position','0 0 -70')
+      alert('roration change landscape');
     }
     //Portrait
     else {
       document.getElementById('augmentedVideo').setAttribute('scale','-0.15 0.15 0.15')
       document.getElementById('augmentedVideo').setAttribute('position','75 0 -125')
+      alert('roration change portrait');
     }
     document.getElementById('vid').pause();
     document.getElementById('vid').play();
-    alert('roration change');
   };
   window.onload = function () {
     document
@@ -105,7 +106,7 @@
     <img src="speakerIcon.png" class="say-hi-button" />
   </div>
   <div class="arjs-loader">
-    <div>AR Erlebnis wird geladen ~v1.6 </div>
+    <div>AR Erlebnis wird geladen ~v1.7 </div>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
