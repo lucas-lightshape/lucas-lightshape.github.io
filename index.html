@@ -12,8 +12,10 @@
 <script>
   const event = new Event('event');
   onorientationchange = (event) => {
+    let device = UIDevice.currentDevice();
+    let deviceOrientationRaw = device.orientation.rawValue
     //Landscape
-    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
+    if (deviceOrientationRaw=='Landscape Right'||deviceOrientationRaw=='Landscape Left')
     {
       document.getElementById('augmentedVideo').setAttribute('scale','-0.2 0.2 0.2')
       document.getElementById('augmentedVideo').setAttribute('position','0 0 -70')
