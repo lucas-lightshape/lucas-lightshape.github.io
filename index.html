@@ -22,6 +22,7 @@
       document.getElementById('augmentedVideo').setAttribute('scale','-0.15 0.15 0.15')
       document.getElementById('augmentedVideo').setAttribute('position','75 0 -125')
     }
+    document.getElementById('augmentedVideo').load();
   };
   window.onload = function () {
     document
@@ -102,7 +103,7 @@
     <img src="speakerIcon.png" class="say-hi-button" />
   </div>
   <div class="arjs-loader">
-    <div>AR Erlebnis wird geladen ~v1.4 </div>
+    <div>AR Erlebnis wird geladen ~v1.5 </div>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
