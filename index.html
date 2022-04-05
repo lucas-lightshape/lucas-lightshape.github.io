@@ -13,11 +13,13 @@
   const event = new Event('event');
   onorientationchange = (event) => {
     //Landscape
-    if (screen.availHeight < screen.availWidth) {
+    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
+    {
       document.getElementById('augmentedVideo').setAttribute('scale','-0.2 0.2 0.2')
       document.getElementById('augmentedVideo').setAttribute('position','0 0 -70')
-      alert('roration change landscape');
+      alert('roration change landscape');  
     }
+    //if (screen.availHeight < screen.availWidth) {}
     //Portrait
     else {
       document.getElementById('augmentedVideo').setAttribute('scale','-0.15 0.15 0.15')
@@ -106,7 +108,7 @@
     <img src="speakerIcon.png" class="say-hi-button" />
   </div>
   <div class="arjs-loader">
-    <div>AR Erlebnis wird geladen ~v1.7 </div>
+    <div>AR Erlebnis wird geladen ~v1.8 </div>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
