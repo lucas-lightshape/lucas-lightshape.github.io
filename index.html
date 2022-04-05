@@ -10,9 +10,24 @@
 <script src="https://raw.githack.com/AR-js-org/AR.js/ES6/aframe/build/aframe-ar-nft.js"></script>
 
 <script>
-  onorientationchange = event => {
-    if(screen.availHeight < screen.availWidth)
-    alert("Bitte verwenden sie das Gerät im Hochkantmodus")
+  onorientationchange = (event) => {
+    var augmentedVideo = document.getElementById("augmentedVideo");
+    //Landscape
+    if (screen.availHeight < screen.availWidth) {
+      augmentedVideo.setAttribute(position, "75 0 -120");
+      augmentedVideo.setAttribute(rotation, "90 0 180");
+      augmentedVideo.setAttribute(width, "1280");
+      augmentedVideo.setAttribute(height, "720");
+      augmentedVideo.setAttribute(scale, "-0.25 0.25 0.25");
+    }
+    //Portrait
+    else {
+      augmentedVideo.setAttribute(position, "75 0 -120");
+      augmentedVideo.setAttribute(rotation, "90 0 180");
+      augmentedVideo.setAttribute(width, "1280");
+      augmentedVideo.setAttribute(height, "720");
+      augmentedVideo.setAttribute(scale, "-0.15 0.15 0.15");
+    }
   };
   window.onload = function () {
     document
@@ -89,51 +104,52 @@
 </style>
 
 <body style="margin: 0px; overflow: hidden">
-    <div class="buttons">
-      <img src="speakerIcon.png" class="say-hi-button" />
-    </div>
-    <div class="arjs-loader">
-      <div>AR Erlebnis wird geladen</div>
-    </div>
-    <a-scene
-      vr-mode-ui="enabled: false;"
-      renderer="antialias: true; alpha: true; precision: medium;"
-      embedded
-      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-    >
-      <a-assets>
-        <video
-          src="30Sec Donpasquale.m4v"
-          preload="auto"
-          id="vid"
-          response-type="arraybuffer"
-          loop
-          crossorigin
-          webkit-playsinline
-          muted
-          playsinline
-        ></video>
-      </a-assets>
+  <div class="buttons">
+    <img src="speakerIcon.png" class="say-hi-button" />
+  </div>
+  <div class="arjs-loader">
+    <div>AR Erlebnis wird geladen</div>
+  </div>
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="antialias: true; alpha: true; precision: medium;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+  >
+    <a-assets>
+      <video
+        src="30Sec Donpasquale.m4v"
+        preload="auto"
+        id="vid"
+        response-type="arraybuffer"
+        loop
+        crossorigin
+        webkit-playsinline
+        muted
+        playsinline
+      ></video>
+    </a-assets>
 
-      <a-nft
-        videohandler
-        type="nft"
-        url="./nft/DonPasquale"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
+    <a-nft
+      videohandler
+      type="nft"
+      url="./nft/DonPasquale"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance="0.01"
+      smoothThreshold="5"
+    >
+      <a-video
+        id="augmentedVideo"
+        src="#vid"
+        position="75 0 -120"
+        rotation="90 0 180"
+        width="1280"
+        height="720"
+        scale="-0.15 0.15 0.15"
       >
-        <a-video
-          src="#vid"
-          position="75 0 -120"
-          rotation="90 0 180"
-          width="1280"
-          height="720"
-          scale="-0.15 0.15 0.15"
-        >
-        </a-video>
-      </a-nft>
-      <a-entity camera></a-entity>
-    </a-scene>
+      </a-video>
+    </a-nft>
+    <a-entity camera></a-entity>
+  </a-scene>
 </body>
