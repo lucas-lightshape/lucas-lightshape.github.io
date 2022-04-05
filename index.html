@@ -15,14 +15,13 @@
     if (screen.availHeight < screen.availWidth) {
        $("#augmentedVideo").attr("position", "75 0 -120");
        $("#augmentedVideo").attr("scale", "0.5 0.5 0.5");
-      var vid = document.getElementById('augmentedVideo');
-      vid.load();
     }
     //Portrait
     else {
        $("#augmentedVideo").attr("position", "75 0 -120");
        $("#augmentedVideo").attr("scale", "-0.15 0.15 0.15");
     }
+    $("#augmentedVideo").update();
   };
   window.onload = function () {
     document
@@ -103,7 +102,7 @@
     <img src="speakerIcon.png" class="say-hi-button" />
   </div>
   <div class="arjs-loader">
-    <div>AR Erlebnis wird geladen</div>
+    <div>AR Erlebnis wird geladen ~v1.1 </div>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
