@@ -12,6 +12,7 @@
 <script>
   const event = new Event('event');
   onorientationchange = (event) => {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     var isIOS = (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream);
     alert(isIOS)
     var landscapeMode = window.innerHeight < window.innerWidth;
