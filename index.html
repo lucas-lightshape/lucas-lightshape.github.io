@@ -13,15 +13,12 @@
   onorientationchange = (event) => {
     //Landscape
     if (screen.availHeight < screen.availWidth) {
-       $("#augmentedVideo").attr("position", "75 0 -120");
-       $("#augmentedVideo").attr("scale", "0.5 0.5 0.5");
+       $("#augmentedVideo").object3D.scale.set(0.5,0.5,0.5)
     }
     //Portrait
     else {
-       $("#augmentedVideo").attr("position", "75 0 -120");
-       $("#augmentedVideo").attr("scale", "-0.15 0.15 0.15");
+       $("#augmentedVideo").object3D.scale.set(-0.15,0.15,0.15);
     }
-    $("#augmentedVideo").update();
   };
   window.onload = function () {
     document
@@ -102,7 +99,7 @@
     <img src="speakerIcon.png" class="say-hi-button" />
   </div>
   <div class="arjs-loader">
-    <div>AR Erlebnis wird geladen ~v1.1 </div>
+    <div>AR Erlebnis wird geladen ~v1.2 </div>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
