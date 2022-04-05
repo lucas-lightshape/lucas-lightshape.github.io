@@ -14,7 +14,9 @@
   onorientationchange = (event) => {
     //Landscape
     if (screen.availHeight < screen.availWidth) {
-      document.getElementById('#augmentedVideo').dispatchEvent(event);
+      document.getElementById('augmentedVideo').setAttribute('scale','-0.2 0.2 0.2')
+      document.getElementById('augmentedVideo').setAttribute('position','0 0 -70')
+      alert('attention please')
     }
     //Portrait
     else {
@@ -99,7 +101,7 @@
     <img src="speakerIcon.png" class="say-hi-button" />
   </div>
   <div class="arjs-loader">
-    <div>AR Erlebnis wird geladen ~v1.3 </div>
+    <div>AR Erlebnis wird geladen ~v1.4 </div>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
