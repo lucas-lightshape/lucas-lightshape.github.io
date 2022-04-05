@@ -12,8 +12,13 @@
 <script>
   const event = new Event('event');
   onorientationchange = (event) => {
+    var isIOS = (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream);
+    alert(isIOS)
+    var landscapeMode = window.innerHeight < window.innerWidth;
+    if(!isIOS)
+      landscapeMode = !landscapeMode;
     //Landscape
-    if (window.innerHeight < window.innerWidth)
+    if (landscapeMode)
     {
       document.getElementById('augmentedVideo').setAttribute('scale','-0.2 0.2 0.2')
       document.getElementById('augmentedVideo').setAttribute('position','0 0 -70')
