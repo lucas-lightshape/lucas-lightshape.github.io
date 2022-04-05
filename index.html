@@ -11,22 +11,15 @@
 
 <script>
   onorientationchange = (event) => {
-    var augmentedVideo = document.getElementById("augmentedVideo");
     //Landscape
     if (screen.availHeight < screen.availWidth) {
-      augmentedVideo.setAttribute(position, "75 0 -120");
-      augmentedVideo.setAttribute(rotation, "90 0 180");
-      augmentedVideo.setAttribute(width, "1280");
-      augmentedVideo.setAttribute(height, "720");
-      augmentedVideo.setAttribute(scale, "0.5 0.5 0.5");
+       $("#augmentedVideo").attr("position", "75 0 -120");
+       $("#augmentedVideo").attr("scale", "0.5 0.5 0.5");
     }
     //Portrait
     else {
-      augmentedVideo.setAttribute(position, "75 0 -120");
-      augmentedVideo.setAttribute(rotation, "90 0 180");
-      augmentedVideo.setAttribute(width, "1280");
-      augmentedVideo.setAttribute(height, "720");
-      augmentedVideo.setAttribute(scale, "-0.15 0.15 0.15");
+       $("#augmentedVideo").attr("position", "75 0 -120");
+       $("#augmentedVideo").attr("scale", "-0.15 0.15 0.15");
     }
   };
   window.onload = function () {
