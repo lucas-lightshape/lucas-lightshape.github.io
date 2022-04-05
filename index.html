@@ -16,10 +16,11 @@
     if (screen.availHeight < screen.availWidth) {
       document.getElementById('augmentedVideo').setAttribute('scale','-0.2 0.2 0.2')
       document.getElementById('augmentedVideo').setAttribute('position','0 0 -70')
-      alert('attention please')
     }
     //Portrait
     else {
+      document.getElementById('augmentedVideo').setAttribute('scale','-0.15 0.15 0.15')
+      document.getElementById('augmentedVideo').setAttribute('position','75 0 -125')
     }
   };
   window.onload = function () {
